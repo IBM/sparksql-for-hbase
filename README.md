@@ -103,3 +103,29 @@ Currently, HSpark support several data types that are commonly used. For TPC-DS 
 | Date | Long |
 
 Please find the table creation commands in the `scripts` folder.
+
+3.	Import data into the tables
+
+HSpark supports bulk-load data into the tables. The data can be defined in the CSV files. By using TPC-DS tool, you can generate the data at your preferred size.
+
+HSpark can import CSV data file that you generate by using TPC-DS tool. Import the data into different tables using the script:
+
+```sh
+LOAD DATA LOCAL INPATH ‘<path_to_csv_file>’ INTO TABLE <table_name>
+```
+
+Please find the data import commands in the `scripts` folder. Sample data files are in the `data` folder.
+
+4. Query the tables
+
+With some data imported into the tables and we can then query the tables using the regular SQL queries. Here are some of the examples (change the values of the query correspondingly), for example,
+
+```sh
+SELECT count(1) FROM store_sales
+```
+
+More query examples can be found in `scripts` folder.
+
+5. Using HSpark programmatically
+
+HSpark can also be used programmatically to create the tables, import data and query the data. More examples can be found in the `test` folder of HSpark source codes.
