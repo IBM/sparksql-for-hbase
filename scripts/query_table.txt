@@ -1,0 +1,16 @@
+Query 1: 
+SELECT count(1) FROM store_sales
+
+Query 2: 
+SELECT ss_quantity, ss_wholesale_cost, ss_list_price FROM store_sales WHERE ss_item_sk = 2744 AND ss_ticket_number = 1
+
+Query 3: 
+SELECT ss_sold_date_sk, ss_sold_time_sk, ss_store_sk FROM store_sales WHERE ss_item_sk = 2744 AND ss_ticket_number = 1
+
+Query 4:
+SELECT ss_item_sk, count(1) FROM store_sales GROUP BY ss_item_sk
+
+Query 5:
+SELECT count(*) FROM store_sales JOIN store ON ss_store_sk = s_store_sk and ss_item_sk = 2744
+
+

@@ -1,0 +1,125 @@
+# create table item 
+
+CREATE TABLE item (
+i_item_sk INTEGER,
+i_item_id STRING,
+i_rec_start_date LONG,
+i_rec_end_date LONG,
+i_item_desc STRING,
+i_current_price FLOAT,
+i_wholesale_cost FLOAT,
+i_brand_id INTEGER,
+i_brand STRING,
+i_class_id INTEGER,
+i_class STRING,
+i_category_id INTEGER,
+i_category STRING,
+i_manufact_id INTEGER,
+i_manufact STRING,
+i_size STRING,
+i_formulation STRING,
+i_color STRING,
+i_units STRING,
+i_container STRING,
+i_manager_id INTEGER,
+i_product_name STRING)
+TBLPROPERTIES(
+'hbaseTableName'='item_htable',
+'keyCols'='i_item_sk',
+'nonKeyCols'='i_item_id,f,i_item_id;i_rec_start_date,f,i_rec_start_date;i_rec_end_date,f,i_rec_end_date;i_item_desc,f,i_item_desc;i_current_price,f,i_current_price;i_wholesale_cost,f,i_wholesale_cost;i_brand_id,f,i_brand_id;i_brand,f,i_brand;i_class_id,f,i_class_id;i_class,f,i_class;i_category_id,f,i_category_id;i_category,f,i_category;i_manufact_id,f,i_manufact_id;i_manufact,f,i_manufact;i_size,f,i_size;i_formulation,f,i_formulation;i_color,f,i_color;i_units,f,i_units;i_container,f,i_counter;i_manager_id,f,i_manager_id;i_product_name,f,i_product_name')
+
+# create table store_sales
+
+CREATE TABLE store_sales (ss_sold_date_sk INTEGER,ss_sold_time_sk INTEGER,ss_item_sk INTEGER,ss_customer_sk INTEGER,ss_cdemo_sk INTEGER,ss_hdemo_sk INTEGER,ss_addr_sk INTEGER,ss_store_sk INTEGER,ss_promo_sk INTEGER,ss_ticket_number INTEGER,ss_quantity INTEGER,ss_wholesale_cost FLOAT,ss_list_price FLOAT,ss_sales_price FLOAT,ss_ext_discount_amt FLOAT,ss_ext_sales_price FLOAT,ss_ext_wholesale_cost FLOAT,ss_ext_list_price FLOAT,ss_ext_tax FLOAT,ss_coupon_amt FLOAT,ss_net_paid FLOAT,ss_net_paid_inc_tax FLOAT,ss_net_profit FLOAT) TBLPROPERTIES(
+'hbaseTableName'='store_sales_htable',
+'keyCols'='ss_item_sk;ss_ticket_number',
+'nonKeyCols'='ss_sold_date_sk,f,ss_sold_date_sk;ss_sold_time_sk,f,ss_sold_time_sk;ss_customer_sk,f,ss_customer_sk;ss_cdemo_sk,f,ss_cdemo_sk;ss_hdemo_sk,f,ss_hdemo_sk;ss_addr_sk,f,ss_addr_sk;ss_store_sk,f,ss_store_sk;ss_promo_sk,f,ss_promo_sk;ss_quantity,f,ss_quantity;ss_wholesale_cost,f,ss_wholesale_cost;ss_list_price,f,ss_list_price;ss_sales_price,f,ss_sales_price;ss_ext_discount_amt,f,ss_ext_discount_amt;ss_ext_sales_price,f,ss_ext_sales_price;ss_ext_wholesale_cost,f,ss_ext_wholesale_cost;ss_ext_list_price,f,ss_ext_list_price;ss_ext_tax,f,ss_ext_tax;ss_coupon_amt,f,ss_coupon_amt;ss_net_paid,f,ss_net_paid;ss_net_paid_inc_tax,f,ss_net_paid_inc_tax;ss_net_profit,f,ss_net_profit')
+
+# create table customer
+
+CREATE TABLE customer (
+c_customer_sk INTEGER,
+c_customer_id STRING,
+c_current_cdemo_sk INTEGER,
+c_current_hdemo_sk INTEGER,
+c_current_addr_sk INTEGER,
+c_first_shipto_date_sk INTEGER,
+c_first_sales_date_sk INTEGER,
+c_salutation STRING,
+c_first_name STRING,
+c_last_name STRING,
+c_preferred_cust_flag STRING,
+c_birth_day INTEGER,
+c_birth_month INTEGER,
+c_birth_year INTEGER,
+c_birth_country STRING,
+c_login STRING,
+c_email_address STRING,
+c_last_review_date_sk INTEGER)
+TBLPROPERTIES(
+'hbaseTableName'='customer_htable',
+'keyCols'='c_customer_sk',
+'nonKeyCols'='c_customer_id,f,c_customer_id;c_current_cdemo_sk,f,c_current_cdemo_sk;c_current_hdemo_sk,f,c_current_hdemo_sk;c_current_addr_sk,f,c_current_addr_sk;
+c_first_shipto_date_sk,f,c_first_shipto_date_sk;c_first_sales_date_sk,f,c_first_sales_date_sk;c_salutation,f,c_salutation;c_first_name,f,c_first_name;c_last_name,f,c_last_name;c_preferred_cust_flag,f,c_preferred_cust_flag;c_birth_day,f,c_birth_day;c_birth_month,f,c_birth_month;c_birth_year,f,c_birth_year;c_birth_country,f,c_birth_country;
+c_login,f,c_login;c_email_address,f,c_email_address;c_last_review_date_sk,f,c_last_review_date_sk')
+
+# create table customer_address
+
+CREATE TABLE customer_address (
+ca_address_sk INTEGER,
+ca_address_id STRING,
+ca_street_number STRING,
+ca_street_name STRING,
+ca_stret_type STRING,
+ca_suite_number STRING,
+ca_city STRING,
+ca_county STRING,
+ca_state STRING,
+ca_zip STRING,
+ca_country STRING,
+ca_gmt_offset FLOAT,
+ca_location_type STRING)
+TBLPROPERTIES(
+'hbaseTableName'='customer_address_htable',
+'keyCols'='ca_address_sk',
+'nonKeyCols'='ca_address_id,f,ca_address_id;ca_street_number,f,ca_street_number;ca_street_name,f,ca_street_name;ca_stret_type,f,ca_stret_type;ca_suite_number,f,ca_suite_number;ca_city,f,ca_city;ca_county,f,ca_county;ca_state,f,ca_state;ca_zip,f,ca_zip;ca_country,f,ca_country;ca_gmt_offset,f,ca_gmt_offset;ca_location_type,f,ca_location_type')
+
+# create table store
+
+CREATE TABLE store (
+s_store_sk INTEGER,
+s_store_id STRING,
+s_rec_start_date LONG,
+s_rec_end_date LONG,
+s_closed_date_sk INTEGER,
+s_store_name STRING,
+s_number_employees INTEGER,
+s_floor_space INTEGER,
+s_hours STRING,
+s_manager STRING,
+s_market_id INTEGER,
+s_geography_class STRING,
+s_market_desc STRING,
+s_market_manager STRING,
+s_division_id INTEGER,
+s_division_name STRING,
+s_company_id INTEGER,
+s_company_name STRING,
+s_street_number STRING,
+s_street_name STRING,
+s_street_type STRING,
+s_suite_number STRING,
+s_city STRING,
+s_county STRING,
+s_state STRING,
+s_zip STRING,
+s_country STRING,
+s_gmt_offset FLOAT,
+s_tax_percentage FLOAT
+)
+TBLPROPERTIES(
+'hbaseTableName'='store_htable',
+'keyCols'='s_store_sk',
+'nonKeyCols'='s_store_id,f,s_store_id;s_rec_start_date,f,s_rec_start_date;s_rec_end_date,f,s_rec_end_date;s_closed_date_sk,f,s_closed_date_sk;s_store_name,f,s_store_name;s_number_employees,f,s_number_employees;s_floor_space,f,s_floor_space;s_hours,f,s_hours;s_manager,f,s_manager;s_market_id,f,s_market_id;s_geography_class,f,s_geography_class;
+s_market_desc,f,s_market_desc;s_market_manager,f,s_market_manager;s_division_id,f,s_division_id;s_division_name,f,s_division_name;s_company_id,f,s_company_id;s_company_name,f,s_company_name;s_street_number,f,s_street_number;s_street_name,f,s_street_name;s_street_name,f,s_street_name;s_suite_number,f,s_suite_number;s_city,f,s_city;s_county,f,s_county;s_state,f,s_state;s_zip,f,s_zip;s_country,f,s_country;s_gmt_offset,f,s_gmt_offset;s_tax_percentage,f,s_tax_percentage')
+
