@@ -87,3 +87,5 @@ In order to demonstrate HSpark’s capability, we will use some of the TPC-DS sc
 1.	Schemas
 
 We will take some tables from TPC-DS definition. Here is the schema, the primary key(s) in each table is marked by underline:
+
+[![N|Solid](https://github.com/bomeng/hspark_journey/blob/master/resources/schema.png)](https://github.com/bomeng/hspark_journey/blob/master/resources/schema.png)
