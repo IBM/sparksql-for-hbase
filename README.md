@@ -56,3 +56,34 @@ export HSPARK_HOME=<path_to_hspark>
 ```
 
 Configure the proper values of hspark.properties in the HSpark/conf folder. Depends on your HBase running mode, you can leave the value as it is, or modify them similar to the comments as an example.
+
+Then go to the root of the source tree and use Apache Maven to build the project:
+
+```sh
+cd HSpark
+mvn -DskipTests clean install
+```
+
+In order to use HSpark SQL shell, you will need to add the built jar to the HBASE classpath:
+
+```sh
+export HBASE_CLASSPATH=<path_to_hspark>/hspark-2.2.0.jar
+```
+
+4. Start the HSpark shell
+
+4	Start the HSpark shell
+
+```sh
+cd <path_to_hspark>
+./bin/hbase-sql
+```
+### Using HSpark to access TPC-DS data
+
+TPC-DS is the de-facto industry standard benchmark for measuring the performance of decision support solutions including, but not limited to, Big Data systems.
+
+In order to demonstrate HSpark’s capability, we will use some of the TPC-DS schema to create the tables in the HBase and then import the sample data into those tables. After that, we can use HSpark to do various queries against the tables we’ve created.
+
+1.	Schemas
+
+We will take some tables from TPC-DS definition. Here is the schema, the primary key(s) in each table is marked by underline:
