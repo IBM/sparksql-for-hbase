@@ -128,4 +128,4 @@ More query examples can be found in `scripts` folder.
 
 5. Using HSpark programmatically
 
-HSpark can also be used programmatically to create the tables, import data and query the data. More examples can be found in the `test` folder of HSpark source codes.
+HSpark can also be used programmatically to create the tables, import data and query the data. More examples can be found in the [test](https://github.com/bomeng/HSpark/tree/master/src/test) folder of HSpark source codes.
