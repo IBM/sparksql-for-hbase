@@ -102,7 +102,7 @@ Currently, HSpark support several data types that are commonly used. For TPC-DS 
 | Char(N) or Varchar(N) | String |
 | Date | Long |
 
-Please find the table creation commands in the `scripts` folder.
+Please find the table creation commands in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder.
 
 3.	Import data into the tables
 
@@ -114,7 +114,7 @@ HSpark can import CSV data file that you generate by using TPC-DS tool. Import t
 LOAD DATA LOCAL INPATH ‘<path_to_csv_file>’ INTO TABLE <table_name>
 ```
 
-Please find the data import commands in the `scripts` folder. Sample data files are in the `data` folder.
+Please find the data import commands in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder. Sample data files are in the [data](https://github.com/bomeng/hspark_journey/tree/master/data) folder.
 
 4. Query the tables
 
@@ -124,7 +124,7 @@ With some data imported into the tables and we can then query the tables using t
 SELECT count(1) FROM store_sales
 ```
 
-More query examples can be found in `scripts` folder.
+More query examples can be found in [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder.
 
 5. Using HSpark programmatically
 
