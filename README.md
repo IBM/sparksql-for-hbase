@@ -101,3 +101,5 @@ Currently, HSpark support several data types that are commonly used. For TPC-DS 
 | Decimal(d, f) | Float or Double |
 | Char(N) or Varchar(N) | String |
 | Date | Long |
+
+Please find the table creation commands in the `scripts` folder.
