@@ -89,3 +89,15 @@ In order to demonstrate HSpark’s capability, we will use some of the TPC-DS sc
 We will take some tables from TPC-DS definition. Here is the schema, the primary key(s) in each table is marked by underline:
 
 [![N|Solid](https://github.com/bomeng/hspark_journey/blob/master/resources/schema.png)](https://github.com/bomeng/hspark_journey/blob/master/resources/schema.png)
+
+2. Create the tables using script in the HSpark shell
+
+Currently, HSpark support several data types that are commonly used. For TPC-DS schema, the data type can be mapped as followings:
+
+| TPC-DS data type | HSpark data type |
+| ------ | ------ |
+| Identifier | Integer |
+| Integer | Integer |
+| Decimal(d, f) | Float or Double |
+| Char(N) or Varchar(N) | String |
+| Date | Long |
