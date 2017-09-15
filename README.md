@@ -64,6 +64,8 @@ cd HSpark
 mvn -DskipTests clean install
 ```
 
+If you do not want to build HSpark, you can also download a built jar in the release folder. 
+
 In order to use HSpark SQL shell, you will need to add the built jar to the HBASE classpath:
 
 ```sh
@@ -72,7 +74,7 @@ export HBASE_CLASSPATH=<path_to_hspark>/hspark-2.2.0.jar
 
 4. Start the HSpark shell
 
-4	Start the HSpark shell
+HSpark shell is a convenient tool for the developers or users to try HSpark quickly. It supports the basic SQL commands to create table, import data and query the table. After we have installed Spark, HBase and HSpark, now we start the HSpark shell:
 
 ```sh
 cd <path_to_hspark>
@@ -86,7 +88,7 @@ In order to demonstrate HSpark’s capability, we will use some of the TPC-DS sc
 
 1.	Schemas
 
-We will take some tables from TPC-DS definition. Here is the schema, the primary key(s) in each table is marked by underline:
+We will take some tables from TPC-DS definition. Here is the schema, the primary keys in each table are marked by underline:
 
 [![N|Solid](https://github.com/bomeng/hspark_journey/blob/master/resources/schema.png)](https://github.com/bomeng/hspark_journey/blob/master/resources/schema.png)
 
@@ -102,9 +104,9 @@ Currently, HSpark support several data types that are commonly used. For TPC-DS 
 | Char(N) or Varchar(N) | String |
 | Date | Long |
 
-Please find the table creation commands in the `scripts` folder.
+Please find the table creation commands in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder.
 
-3.	Import data into the tables
+3.	Import data into the tables using script in the HSpark shell
 
 HSpark supports bulk-load data into the tables. The data can be defined in the CSV files. By using TPC-DS tool, you can generate the data at your preferred size.
 
@@ -114,18 +116,18 @@ HSpark can import CSV data file that you generate by using TPC-DS tool. Import t
 LOAD DATA LOCAL INPATH ‘<path_to_csv_file>’ INTO TABLE <table_name>
 ```
 
-Please find the data import commands in the `scripts` folder. Sample data files are in the `data` folder.
+Please find the data import commands in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder. Sample data files can be found in the [data](https://github.com/bomeng/hspark_journey/tree/master/data) folder.
 
-4. Query the tables
+4. Query the tables using script in the HSpark shell
 
-With some data imported into the tables and we can then query the tables using the regular SQL queries. Here are some of the examples (change the values of the query correspondingly), for example,
+With some data imported into the tables and we can then query the tables using the regular SQL queries, for example,
 
 ```sh
 SELECT count(1) FROM store_sales
 ```
 
-More query examples can be found in `scripts` folder.
+More query examples can be found in [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder.
 
 5. Using HSpark programmatically
 
-HSpark can also be used programmatically to create the tables, import data and query the data. More examples can be found in the `test` folder of HSpark source codes.
+HSpark can be used programmatically as well to create the tables, import data or query the tables. More examples can be found in the [test](https://github.com/bomeng/HSpark/tree/master/src/test) folder of HSpark source codes.
