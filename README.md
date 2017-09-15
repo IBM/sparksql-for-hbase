@@ -1,8 +1,11 @@
 # Spark SQL access to NOSQL HBase Tables
 
-In this developer journey, we show you an example using Spark and HSpark connector package to query against data tables reside in HBase region servers. When you complete this journey, you will understand how to:
- - Install and configure Spark and HSpark connector
- - Learn to create Metadata for Big Tables in HBase
+In this developer journey, we show you an example using Spark and HSpark connector package to query against data tables reside in HBase region servers. 
+
+When the readers has completed this journey, they will understand how to:
+
+ - Install and configure [Apache Spark](https://spark.apache.org/) and [HSpark](https://github.com/bomeng/HSpark) connector
+ - Learn to create metadata for tables in [Apache HBase](https://hbase.apache.org/)
  - Write Spark SQL queries to retrieve HBase data for analysis
 
 ### Overview
@@ -11,6 +14,11 @@ This journey aims to help application developers who are familiar with SQL while
 
 From this journey, you will learn how to configure the HSpark and Spark to set up the environment; create the data tables using HSpark; insert data into the tables; and finally query the data tables using HSpark.
 With Apache Spark and HSpark package, you will be able to easily access HBase data table while keeping the performance at its best.
+
+Included Components:
+ - [Apache Spark 2.2.0](https://spark.apache.org/)
+ - [Apache HBase 1.2.4](https://hbase.apache.org/)
+ - [HSpark 2.2.0](https://github.com/bomeng/HSpark)
 
 ### Steps to install and configure HSpark
 
