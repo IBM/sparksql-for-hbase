@@ -72,8 +72,6 @@ cd HSpark
 mvn -DskipTests clean install
 ```
 
-If you do not want to build HSpark, you can also download a built jar in the release folder. 
-
 In order to use HSpark SQL shell, you will need to add the built jar to the HBASE classpath:
 
 ```sh
