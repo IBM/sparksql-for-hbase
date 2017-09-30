@@ -121,5 +121,5 @@ TBLPROPERTIES(
 'hbaseTableName'='store_htable',
 'keyCols'='s_store_sk',
 'nonKeyCols'='s_store_id,f,s_store_id;s_rec_start_date,f,s_rec_start_date;s_rec_end_date,f,s_rec_end_date;s_closed_date_sk,f,s_closed_date_sk;s_store_name,f,s_store_name;s_number_employees,f,s_number_employees;s_floor_space,f,s_floor_space;s_hours,f,s_hours;s_manager,f,s_manager;s_market_id,f,s_market_id;s_geography_class,f,s_geography_class;
-s_market_desc,f,s_market_desc;s_market_manager,f,s_market_manager;s_division_id,f,s_division_id;s_division_name,f,s_division_name;s_company_id,f,s_company_id;s_company_name,f,s_company_name;s_street_number,f,s_street_number;s_street_name,f,s_street_name;s_street_name,f,s_street_name;s_suite_number,f,s_suite_number;s_city,f,s_city;s_county,f,s_county;s_state,f,s_state;s_zip,f,s_zip;s_country,f,s_country;s_gmt_offset,f,s_gmt_offset;s_tax_percentage,f,s_tax_percentage')
+s_market_desc,f,s_market_desc;s_market_manager,f,s_market_manager;s_division_id,f,s_division_id;s_division_name,f,s_division_name;s_company_id,f,s_company_id;s_company_name,f,s_company_name;s_street_number,f,s_street_number;s_street_name,f,s_street_name;s_street_type,f,s_street_type;s_suite_number,f,s_suite_number;s_city,f,s_city;s_county,f,s_county;s_state,f,s_state;s_zip,f,s_zip;s_country,f,s_country;s_gmt_offset,f,s_gmt_offset;s_tax_percentage,f,s_tax_percentage')
 
