@@ -122,7 +122,11 @@ HSpark can import CSV data file that you generate by using TPC-DS tool. Import t
 LOAD DATA LOCAL INPATH ‘<path_to_csv_file>’ INTO TABLE <table_name>
 ```
 
-Please find the data import commands in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder. Sample data files can be found in the [data](https://github.com/bomeng/hspark_journey/tree/master/data) folder.
+Please find the data import commands in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder. Sample data files can be found in the [data](https://github.com/bomeng/hspark_journey/tree/master/data) folder. While running the LOAD command, please make sure you have the hbase-staging directory in place (using mkdir and chmod to create the directory manually), or you may get error message as followings:
+
+```sh
+java.io.IOException: Mkdirs failed to create /user/<userid>/hbase-staging
+```
 
 4. Query the tables using script in the HSpark shell
 
