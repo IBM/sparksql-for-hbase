@@ -4,11 +4,11 @@ Our project welcomes external contributions! If you have an itch, please
 feel free to scratch it.
 
 To contribute code or documentation, please submit a pull request to the [GitHub
-repository](https://github.com/IBM/SystemML_LinReg).
+repository](https://github.com/bomeng/HSpark).
 
 A good way to familiarize yourself with the codebase and contribution process is
 to look for and tackle low-hanging fruit in the [issue
-tracker](https://github.com/IBM/SystemML_LinReg/issues). Before embarking on
+tracker](https://github.com/bomeng/HSpark/issues). Before embarking on
 a more ambitious contribution, please quickly [get in touch](#communication)
 with us.
 
@@ -27,7 +27,7 @@ to accept into the code base.
 ### Fixing bugs
 
 If you would like to fix a bug, please [raise an
-issue](https://github.com/IBM/SystemML_LinReg/issues) before sending a pull
+issue](https://github.com/bomeng/HSpark/issues) before sending a pull
 request so it can be discussed. If the fix is trivial or non controversial then
 this is not usually necessary.
 
@@ -42,7 +42,7 @@ For more details, see the [MAINTAINERS](MAINTAINERS.md) page.
 ## Communication
 
 Please feel free to connect with us:
-https://github.com/IBM/SystemML_LinReg/issues
+https://github.com/bomeng/HSpark/issues
 
 ## Setup
 
