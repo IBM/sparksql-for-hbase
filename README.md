@@ -19,6 +19,10 @@ Included Components:
  - [Apache Spark 2.2.0](https://spark.apache.org/)
  - [Apache HBase 1.2.4](https://hbase.apache.org/)
  - [HSpark 2.2.0](https://github.com/bomeng/HSpark)
+ 
+Other tools you may need to complete this journey:
+ - [Apache Maven 3.5.0](https://maven.apache.org/)
+ - [Java JDK 1.8.0_144](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 ### Steps to install and configure HSpark
 
