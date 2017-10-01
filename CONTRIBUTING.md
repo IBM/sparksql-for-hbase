@@ -19,7 +19,7 @@ or cannot be accepted at all!**
 ### Proposing new features
 
 If you would like to implement a new feature, please [raise an
-issue](https://github.com/IBM/SystemML_LinReg/issues) before sending a pull
+issue](https://github.com/bomeng/HSpark/issues) before sending a pull
 request so the feature can be discussed. This is to avoid you spending your
 valuable time working on a feature that the project developers are not willing
 to accept into the code base.
