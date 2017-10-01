@@ -34,13 +34,15 @@ HSpark relies on Apache Spark, thus you need to install Apache Spark first. Down
 https://spark.apache.org/downloads.html
 ```
 
+You may also download the source codes from (Apache Spark GiHub)[https://github.com/apache/spark] and use 2.2 branch to build it.
+
 Apache Spark has an online document to guide user how to set up and configure Apache Spark:
 
 ```sh
 https://spark.apache.org/docs/latest/
 ```
 
-In order to make HSpark work properly, you may need to set SPARK_HOME environment to point to your installation directory.
+In order to make HSpark work properly, you may need to set `SPARK_HOME` environment to point to your installation directory.
 
 2.	Install Apace HBase 1.2.4
 
@@ -56,11 +58,13 @@ HBase can be installed in 3 running modes – standalone, pseudo-distributed, an
 https://hbase.apache.org/book.html#quickstart
 ```
 
-But for simple demonstration of HSpark in a single machine, you can run it using pseudo-distributed mode. In this mode, HBase still runs completely on a single host, but each daemon runs as a separate process. 
+But for simple demonstration of HSpark in a single machine, you can run it using pseudo-distributed mode. In this mode, HBase still runs completely on a single host, but each daemon runs as a separate process.
+
+Please also properly set up the environment variablle of `HBASE_HOME` and its `PATH`.
 
 3.	Download and build HSpark
 
-First you need to use git to clone the source codes from github and set up an environment property $HSPARK_HOME:
+First you need to use git to clone the source codes from github and set up an environment property `HSPARK_HOME`:
 
 ```sh
 git clone https://github.com/bomeng/HSpark.git
