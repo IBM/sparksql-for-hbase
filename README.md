@@ -15,12 +15,12 @@ This journey aims to help application developers who are familiar with SQL while
 From this journey, you will learn how to configure the HSpark and Spark to set up the environment; create the data tables using HSpark; insert data into the tables; and finally query the data tables using HSpark.
 With Apache Spark and HSpark package, you will be able to easily access HBase data table while keeping the performance at its best.
 
-Included Components:
+Related Components:
  - [Apache Spark 2.2.0](https://spark.apache.org/)
  - [Apache HBase 1.2.4](https://hbase.apache.org/)
  - [HSpark 2.2.0](https://github.com/bomeng/HSpark)
  
-Other tools you may need to complete this journey:
+Other tools you may need to complete this journey (please refer to corresponding documents to install those components, you may also need to properly set up system environment such as `PATH`, `JAVA_HOME` and `MVN_HOME`):
  - [Apache Maven 3.5.0](https://maven.apache.org/)
  - [Java JDK 1.8.0_144](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
