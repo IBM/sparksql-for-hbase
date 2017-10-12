@@ -23,12 +23,12 @@ Other tools you may need to complete this journey (please refer to corresponding
 
 Follow these steps to create required components and open the hbase shell locally.
 
-1. [Install Apache Spark 2.2.0](#1-install-apache-spark-2.2.0)
-2. [Install Apace HBase 1.2.4](#2-install-apache-hBase-1.2.4)
+1. [Install Apache Spark](#1-install-apache-spark)
+2. [Install Apace HBase](#2-install-apache-hBase)
 3. [Download and build HSpark](#3-download-and-build-hspark)
 4. [Start the HSpark shell](#4-start-the-hspark-shell)
 
-### 1. Install Apache Spark 2.2.0
+### 1. Install Apache Spark
 
 HSpark relies on Apache Spark, thus you need to install Apache Spark first. Download Apache Spark 2.2.0 from the following link:
 
@@ -46,7 +46,7 @@ https://spark.apache.org/docs/latest/
 
 In order to make HSpark work properly, you may need to set `SPARK_HOME` environment to point to your installation directory.
 
-### 2.	Install Apache HBase 1.2.4
+### 2.	Install Apache HBase
 
 Currently, HSpark works with Apache HBase 1.2.4. Download this version from the following link:
 
