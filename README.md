@@ -28,7 +28,7 @@ Follow these steps to create required components and open the hbase shell locall
 3. [Download and build HSpark](#3-download-and-build-hspark)
 4. [Start the HSpark shell](#4-start-the-hspark-shell)
 
-1. Install Apache Spark 2.2.0
+### 1. Install Apache Spark 2.2.0
 
 HSpark relies on Apache Spark, thus you need to install Apache Spark first. Download Apache Spark 2.2.0 from the following link:
 
@@ -46,7 +46,7 @@ https://spark.apache.org/docs/latest/
 
 In order to make HSpark work properly, you may need to set `SPARK_HOME` environment to point to your installation directory.
 
-2.	Install Apache HBase 1.2.4
+### 2.	Install Apache HBase 1.2.4
 
 Currently, HSpark works with Apache HBase 1.2.4. Download this version from the following link:
 
@@ -64,7 +64,7 @@ But for simple demonstration of HSpark in a single machine, you can run it using
 
 Please also properly set up the environment variablle of `HBASE_HOME` and its `PATH`.
 
-3.	Download and build HSpark
+### 3. Download and build HSpark
 
 First you need to use git to clone the source codes from github and set up an environment property `HSPARK_HOME`:
 
@@ -88,7 +88,7 @@ In order to use HSpark SQL shell, you will need to add the built jar to the HBAS
 export HBASE_CLASSPATH=<path_to_hspark>/hspark-2.2.0.jar
 ```
 
-4. Start the HSpark shell
+### 4. Start the HSpark shell
 
 HSpark shell is a convenient tool for the developers or users to try HSpark quickly. It supports the basic SQL commands to create table, import data and query the table. After we have installed Spark, HBase and HSpark, now we start the HSpark shell:
 
@@ -102,13 +102,13 @@ cd <path_to_hspark>
 
 In order to demonstrate HSpark’s capability, we will use some of the TPC-DS schema to create the tables in the HBase and then import the sample data into those tables. After that, we can use HSpark to do various queries against the tables we’ve created.
 
-1.	Schemas
+### 1. Schemas
 
 We will take some tables from TPC-DS definition. Here is the schema, the primary keys in each table are marked by underline:
 
 [![N|Solid](https://github.com/bomeng/hspark_journey/blob/master/resources/schema.png)](https://github.com/bomeng/hspark_journey/blob/master/resources/schema.png)
 
-2. Create the tables using script in the HSpark shell
+### 2. Create the tables using script in the HSpark shell
 
 Currently, HSpark support several data types that are commonly used. For TPC-DS schema, the data type can be mapped as followings:
 
@@ -122,7 +122,7 @@ Currently, HSpark support several data types that are commonly used. For TPC-DS 
 
 Please find the table creation commands in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder.
 
-3.	Import data into the tables using script in the HSpark shell
+### 3. Import data into the tables using script in the HSpark shell
 
 HSpark supports bulk-load data into the tables. The data can be defined in the CSV files. By using TPC-DS tool, you can generate the data at your preferred size.
 
@@ -134,7 +134,7 @@ LOAD DATA LOCAL INPATH ‘<path_to_csv_file>’ INTO TABLE <table_name>
 
 Please find the data import commands in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder. Sample data files can be found in the [data](https://github.com/bomeng/hspark_journey/tree/master/data) folder.
 
-4. Query the tables using script in the HSpark shell
+### 4. Query the tables using script in the HSpark shell
 
 With some data imported into the tables and we can then query the tables using the regular SQL queries, for example,
 
@@ -144,7 +144,7 @@ SELECT count(1) FROM store_sales
 
 More query examples can be found in [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder, you can also find the output of the examples in the scripts.
 
-5. Using HSpark programmatically
+### 5. Using HSpark programmatically
 
 HSpark can be used programmatically as well to create the tables, import data or query the tables. More examples can be found in the [test](https://github.com/bomeng/HSpark/tree/master/src/test) folder of HSpark source codes.
 
