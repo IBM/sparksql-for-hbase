@@ -10,6 +10,15 @@ When the readers have completed this journey, they will understand how to:
  - Learn to create metadata for tables in [Apache HBase](https://hbase.apache.org/)
  - Write Spark SQL queries to retrieve HBase data for analysis
 
+![Architecture diagram](resources/flow.png)
+
+## Flow
+
+1. Set up the environment (Apache Spark, Apache HBase, and HSpark).
+2. Create the tables using HSpark.
+3. Load the data into the tables.
+4. Query the data using HSpark Shell.
+
 ## Included Components:
  - [Apache Spark 2.2.0](https://spark.apache.org/)
  - [Apache HBase 1.2.4](https://hbase.apache.org/)
@@ -106,7 +115,7 @@ In order to demonstrate HSpark’s capability, we will use some of the TPC-DS sc
 
 We will take some tables from TPC-DS definition. Here is the schema, the primary keys in each table are marked by underline:
 
-[![N|Solid](https://github.com/bomeng/hspark_journey/blob/master/resources/schema.png)](https://github.com/bomeng/hspark_journey/blob/master/resources/schema.png)
+[![N|Solid](resources/schema.png)](resources/schema.png)
 
 ### 2. Create the tables using script in the HSpark shell
 
