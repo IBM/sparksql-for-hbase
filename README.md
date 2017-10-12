@@ -156,5 +156,5 @@ If you see this error while running the LOAD command, it means you need to creat
 
 > Solution: Create the *hbase-staging* directory that is required by hbase (using `mkdir` and `chmod` to create the directory manually).
 
-# License
+## License
 [Apache 2.0](LICENSE)
