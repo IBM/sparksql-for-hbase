@@ -36,7 +36,7 @@ HSpark relies on Apache Spark, thus you need to install Apache Spark first. Down
 https://spark.apache.org/downloads.html
 ```
 
-You may also download the source codes from (Apache Spark GiHub)[https://github.com/apache/spark] and use 2.2 branch to build it.
+You may also download the source codes from [Apache Spark GiHub](https://github.com/apache/spark) and use 2.2 branch to build it.
 
 Apache Spark has an online document to guide user how to set up and configure Apache Spark:
 
