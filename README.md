@@ -1,30 +1,32 @@
 # Spark SQL access to NOSQL HBase Tables
 
-In this developer journey, we show you an example using Spark and HSpark connector package to query against data tables reside in HBase region servers. 
+Apache HBase is an open source, NOSQL and distributed database which runs on top of HDFS and is well-suited for faster read and write operations on large datasets with high throughput and low input/output latency. Unlike relational and traditional databases, HBase lacks of support of SQL scripting, data types, etc. it will use Java API to achieve the equivalent. 
 
-When the readers has completed this journey, they will understand how to:
+This journey aims to help application developers who are familiar with SQL while want to access HBase data tables as well. We will show you how to quickly create and query the data table by using Apache Spark and HSpark connector package, thus eliminating the need to learn Java API to access HBase data table. You can also take the advantage of the performance benefit by using HBase.
+
+When the readers have completed this journey, they will understand how to:
 
  - Install and configure [Apache Spark](https://spark.apache.org/) and [HSpark](https://github.com/bomeng/HSpark) connector
  - Learn to create metadata for tables in [Apache HBase](https://hbase.apache.org/)
  - Write Spark SQL queries to retrieve HBase data for analysis
 
-### Overview
-
-This journey aims to help application developers who are familiar with SQL while want to access HBase data tables as well. We will show you how to quickly create and query the data table by using Apache Spark and HSpark connector package, thus eliminating the need to learn Java API to access HBase data table. You can also take the advantage of the performance benefit by using HBase.
-
-From this journey, you will learn how to configure the HSpark and Spark to set up the environment; create the data tables using HSpark; insert data into the tables; and finally query the data tables using HSpark.
-With Apache Spark and HSpark package, you will be able to easily access HBase data table while keeping the performance at its best.
-
-Related Components:
+## Included Components:
  - [Apache Spark 2.2.0](https://spark.apache.org/)
  - [Apache HBase 1.2.4](https://hbase.apache.org/)
  - [HSpark 2.2.0](https://github.com/bomeng/HSpark)
- 
+
 Other tools you may need to complete this journey (please refer to corresponding documents to install those components, you may also need to properly set up system environment such as `PATH`, `JAVA_HOME` and `MVN_HOME`):
  - [Apache Maven 3.5.0](https://maven.apache.org/)
  - [Java JDK 1.8.0_144](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
-### Steps to install and configure HSpark
+## Steps
+
+Follow these steps to create required components and open the hbase shell locally.
+
+1. [Install Apache Spark 2.2.0](#1-install-apache-spark-2.2.0)
+2. [Install Apace HBase 1.2.4](#2-install-apache-hBase-1.2.4)
+3. [Download and build HSpark](#3-download-and-build-hspark)
+4. [Start the HSpark shell](#4-start-the-hspark-shell)
 
 1. Install Apache Spark 2.2.0
 
@@ -44,7 +46,7 @@ https://spark.apache.org/docs/latest/
 
 In order to make HSpark work properly, you may need to set `SPARK_HOME` environment to point to your installation directory.
 
-2.	Install Apace HBase 1.2.4
+2.	Install Apache HBase 1.2.4
 
 Currently, HSpark works with Apache HBase 1.2.4. Download this version from the following link:
 
@@ -94,7 +96,7 @@ HSpark shell is a convenient tool for the developers or users to try HSpark quic
 cd <path_to_hspark>
 ./bin/hbase-sql
 ```
-### Using HSpark to access TPC-DS data
+## Using HSpark to access TPC-DS data
 
 [The TPC Benchmark™DS (TPC-DS)](http://www.tpc.org/tpcds/) is a decision support benchmark that models several generally applicable aspects of a decision support system, including queries and data maintenance. TPC-DS is the de-facto industry standard benchmark for measuring the performance of decision support solutions including, but not limited to, Big Data systems.
 
@@ -130,11 +132,7 @@ HSpark can import CSV data file that you generate by using TPC-DS tool. Import t
 LOAD DATA LOCAL INPATH ‘<path_to_csv_file>’ INTO TABLE <table_name>
 ```
 
-Please find the data import commands in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder. Sample data files can be found in the [data](https://github.com/bomeng/hspark_journey/tree/master/data) folder. While running the LOAD command, please make sure you have the *hbase-staging* directory in place (using `mkdir` and `chmod` to create the directory manually), or you may get error message as followings:
-
-```sh
-java.io.IOException: Mkdirs failed to create /user/<userid>/hbase-staging
-```
+Please find the data import commands in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder. Sample data files can be found in the [data](https://github.com/bomeng/hspark_journey/tree/master/data) folder.
 
 4. Query the tables using script in the HSpark shell
 
@@ -144,8 +142,19 @@ With some data imported into the tables and we can then query the tables using t
 SELECT count(1) FROM store_sales
 ```
 
-More query examples can be found in [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder.
+More query examples can be found in [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder, you can also find the output of the examples in the scripts.
 
 5. Using HSpark programmatically
 
 HSpark can be used programmatically as well to create the tables, import data or query the tables. More examples can be found in the [test](https://github.com/bomeng/HSpark/tree/master/src/test) folder of HSpark source codes.
+
+## Troubleshooting
+
+* Error: `java.io.IOException: Mkdirs failed to create /user/<userid>/hbase-staging`
+
+If you see this error while running the LOAD command, it means you need to create a temparory folder locally to allow hbase to store intermediate result.
+
+> Solution: Create the *hbase-staging* directory that is required by hbase (using `mkdir` and `chmod` to create the directory manually).
+
+# License
+[Apache 2.0](LICENSE)
