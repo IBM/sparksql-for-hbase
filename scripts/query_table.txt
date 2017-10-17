@@ -138,7 +138,7 @@ Expected result:
 +----------+--------+
 
 Query 5:
-SELETE ss_wholesale_cost, ss_item_sk FROM store_sales WHERE ss_quantity > 80
+SELECT ss_wholesale_cost, ss_item_sk FROM store_sales WHERE ss_quantity > 80
 
 Expected result:
 +-----------------+----------+
