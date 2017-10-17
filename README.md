@@ -55,7 +55,7 @@ https://spark.apache.org/docs/latest/
 
 In order to make HSpark work properly, you may need to set `SPARK_HOME` environment to point to your installation directory.
 
-### 2.	Install Apache HBase
+### 2. Install Apache HBase
 
 Currently, HSpark works with Apache HBase 1.2.4. Download this version from the following link:
 
