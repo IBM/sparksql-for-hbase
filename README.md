@@ -94,7 +94,7 @@ mvn -DskipTests clean install
 In order to use HSpark SQL shell, you will need to add the built jar to the HBASE classpath:
 
 ```sh
-export HBASE_CLASSPATH=<path_to_hspark>/hspark-2.2.0.jar
+export HBASE_CLASSPATH=$HSPARK_HOME/target/hspark-2.2.0.jar
 ```
 
 ### 4. Start the HSpark shell
