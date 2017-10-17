@@ -33,7 +33,7 @@ Other tools you may need to complete this journey (please refer to corresponding
 Follow these steps to create required components and open the hbase shell locally.
 
 1. [Install Apache Spark](#1-install-apache-spark)
-2. [Install Apace HBase](#2-install-apache-hBase)
+2. [Install Apace HBase](#2-install-apache-hbase)
 3. [Download and build HSpark](#3-download-and-build-hspark)
 4. [Start the HSpark shell](#4-start-the-hspark-shell)
 
