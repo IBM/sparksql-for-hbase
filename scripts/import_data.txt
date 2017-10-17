@@ -1,1 +1,1 @@
-LOAD DATA LOCAL INPATH ‘/data/store_sales.txt’ INTO TABLE store_sales
+LOAD DATA LOCAL INPATH '/data/store_sales.txt' INTO TABLE store_sales
