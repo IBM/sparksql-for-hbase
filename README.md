@@ -165,5 +165,17 @@ If you see this error while running the LOAD command, it means you need to creat
 
 > Solution: Create the *hbase-staging* directory that is required by hbase (using `mkdir` and `chmod` to create the directory manually).
 
+* Error: `java.net.ConnectException: Connection refused`
+
+If you see this error while running the command, it usually means HSpark cannot connect to HBase, either it is due to connection configuration issue, or HBase is not up and running.
+
+> Solution: Make sure HBase is properly configured and is running. You can also use `jps` to check if it is running.
+
+* Error: `org.apache.spark.sql.catalyst.parser.ParseException`
+
+If you see this error while running any command, it means your command syntax is not correct.
+
+> Solution: Make sure your command is just one single line and has the correct syntax, especially for the single quote, space, etc. Although some example scripts look like multi-line commands, they are actually just single-line commands.
+
 ## License
 [Apache 2.0](LICENSE)
