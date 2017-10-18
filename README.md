@@ -1,10 +1,10 @@
-# Spark SQL access to NOSQL HBase Tables
+# Using Spark SQL to access NOSQL HBase Tables
 
-Apache HBase is an open source, NOSQL and distributed database which runs on top of HDFS and is well-suited for faster read and write operations on large datasets with high throughput and low input/output latency. Unlike relational and traditional databases, HBase lacks of support of SQL scripting, data types, etc. it will use Java API to achieve the equivalent. 
+Apache HBase is an open source, NOSQL distributed database which runs on top of the Hadoop Distributed File System (HDFS), and is well-suited for faster read/write operations on large datasets with high throughput and low input/output latency. Unlike relational and traditional databases, HBase lacks support for SQL scripting, data types, etc., and requires the Java API to achieve the equivalent functionality. 
 
-This journey aims to help application developers who are familiar with SQL while want to access HBase data tables as well. We will show you how to quickly create and query the data table by using Apache Spark and HSpark connector package, thus eliminating the need to learn Java API to access HBase data table. You can also take the advantage of the performance benefit by using HBase.
+This journey is intended to provide application developers familiar with SQL the methods to access HBase NOSQL data tables. You will quickly see how to create and query the data tables by using Apache Spark and the HSpark connector package, thus eliminating the need to learn the Java APIs required to tradionally access the HBase data tables. Additionally, HBase provides a signiicant performance advantage.
 
-When the readers have completed this journey, they will understand how to:
+When you have completed this journey, you will understand how to:
 
  - Install and configure [Apache Spark](https://spark.apache.org/) and [HSpark](https://github.com/bomeng/HSpark) connector
  - Learn to create metadata for tables in [Apache HBase](https://hbase.apache.org/)
@@ -20,17 +20,18 @@ When the readers have completed this journey, they will understand how to:
 4. Query the data using HSpark Shell.
 
 ## Included Components:
- - [Apache Spark 2.2.0](https://spark.apache.org/)
- - [Apache HBase 1.2.4](https://hbase.apache.org/)
- - [HSpark 2.2.0](https://github.com/bomeng/HSpark)
+ - [Apache Spark](https://spark.apache.org/): An open-source, fast and general-purpose cluster computing system.
+ - [Apache HBase](https://hbase.apache.org/): A distribute key/value data store built to run on top of HDFS.
+ - [HSpark 2.2.0](https://github.com/bomeng/HSpark): Provides access to HBase using SparkSQL. 
 
-Other tools you may need to complete this journey (please refer to corresponding documents to install those components, you may also need to properly set up system environment such as `PATH`, `JAVA_HOME` and `MVN_HOME`):
- - [Apache Maven 3.5.0](https://maven.apache.org/)
- - [Java JDK 1.8.0_144](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+There are also some core tools you will need to complete this journey. If you do not already have them installed, please refer to the corresponding documents for installation instructions. Ensure that the proper system environemnt variables are correctly set (such as `PATH`, `JAVA_HOME` and `MVN_HOME`).
+
+ - [Apache Maven 3.5.0](https://maven.apache.org/): A build automation tool primarily used for Java projects.
+ - [Java JDK 1.8.0_144](http://www.oracle.com/technetwork/java/javase/downloads/index.html): A software development environment used for developing Java applications.
 
 ## Steps
 
-Follow these steps to create required components and open the hbase shell locally.
+Perform the following steps:
 
 1. [Install Apache Spark](#1-install-apache-spark)
 2. [Install Apace HBase](#2-install-apache-hbase)
@@ -39,39 +40,25 @@ Follow these steps to create required components and open the hbase shell locall
 
 ### 1. Install Apache Spark
 
-HSpark relies on Apache Spark, thus you need to install Apache Spark first. Download Apache Spark 2.2.0 from the following link:
-
-```sh
-https://spark.apache.org/downloads.html
-```
+HSpark relies on Apache Spark, thus you need to install Apache Spark first. Download Apache Spark 2.2.0 from the [downloads page](https://spark.apache.org/downloads.html). 
 
 You may also download the source codes from [Apache Spark GiHub](https://github.com/apache/spark) and use 2.2 branch to build it.
 
-Apache Spark has an online document to guide user how to set up and configure Apache Spark:
+To set-up and configure Aoache Spark, please refer to the [on-line users guide](https://spark.apache.org/docs/latest/).
 
-```sh
-https://spark.apache.org/docs/latest/
-```
-
-In order to make HSpark work properly, you may need to set `SPARK_HOME` environment to point to your installation directory.
+In order to make HSpark work properly, you may need to set the `SPARK_HOME` environment variable to point to your installation directory.
 
 ### 2. Install Apache HBase
 
-Currently, HSpark works with Apache HBase 1.2.4. Download this version from the following link:
+Currently, HSpark works with Apache HBase 1.2.4. Go to the [downloads page](https://archive.apache.org/dist/hbase/1.2.4/) to install it. 
 
-```sh
-https://archive.apache.org/dist/hbase/1.2.4/
-```
+HBase can be installed to run in 3 different modes – standalone, pseudo-distributed, and fully distributed. 
 
-HBase can be installed in 3 running modes – standalone, pseudo-distributed, and fully distributed mode. Follow this link to install HBase in your preferred mode to test:
+For our simple demonstration of running HSpark in a single machine, we recommend you run it in pseudo-distributed mode. This mode runs HBase completely on a single host, but all daemons run as a separate process.
 
-```sh
-https://hbase.apache.org/book.html#quickstart
-```
+For reference, refer to this [guide](https://hbase.apache.org/book.html#quickstart) to review how to install and run in each of the modes.
 
-But for simple demonstration of HSpark in a single machine, you can run it using pseudo-distributed mode. In this mode, HBase still runs completely on a single host, but each daemon runs as a separate process.
-
-Please also properly set up the environment variablle of `HBASE_HOME` and its `PATH`.
+Also properly set up the environment variable `HBASE_HOME` and add it to `PATH`.
 
 ### 3. Download and build HSpark
 
@@ -109,7 +96,7 @@ cd <path_to_hspark>
 
 [The TPC Benchmark™DS (TPC-DS)](http://www.tpc.org/tpcds/) is a decision support benchmark that models several generally applicable aspects of a decision support system, including queries and data maintenance. TPC-DS is the de-facto industry standard benchmark for measuring the performance of decision support solutions including, but not limited to, Big Data systems.
 
-In order to demonstrate HSpark’s capability, we will use some of the TPC-DS schema to create the tables in the HBase and then import the sample data into those tables. After that, we can use HSpark to do various queries against the tables we’ve created.
+In order to demonstrate HSpark’s capability, we will use some of the TPC-DS schema to create the tables in HBase and then import the sample data into those tables. We can then use HSpark to do various queries against these tables.
 
 ### 1. Schemas
 
@@ -119,7 +106,7 @@ We will take some tables from TPC-DS definition. Here is the schema, the primary
 
 ### 2. Create the tables using script in the HSpark shell
 
-Currently, HSpark support several data types that are commonly used. For TPC-DS schema, the data type can be mapped as followings:
+Currently, HSpark supports several data types that are commonly used. For TPC-DS schema, the data types can be mapped as the following:
 
 | TPC-DS data type | HSpark data type |
 | ------ | ------ |
@@ -129,11 +116,11 @@ Currently, HSpark support several data types that are commonly used. For TPC-DS 
 | Char(N) or Varchar(N) | String |
 | Date | Long |
 
-Please find the table creation commands in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder.
+Please find the table creation commands in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder. There you will find 5 commands that you need to cut and paste into the HSpark Shell.
 
 ### 3. Import data into the tables using script in the HSpark shell
 
-HSpark supports bulk-load data into the tables. The data can be defined in the CSV files. By using TPC-DS tool, you can generate the data at your preferred size.
+HSpark supports bulk-load of data into the tables. The data can be defined in CSV files. By using the TPC-DS tool, you can generate the data at your preferred size.
 
 HSpark can import CSV data file that you generate by using TPC-DS tool. Import the data into different tables using the script:
 
@@ -145,17 +132,17 @@ Please find the data import commands in the [scripts](https://github.com/bomeng/
 
 ### 4. Query the tables using script in the HSpark shell
 
-With some data imported into the tables and we can then query the tables using the regular SQL queries, for example,
+After importing the data into the tables, we can now query the tables using regular SQL queries, for example,
 
 ```sh
 SELECT count(1) FROM store_sales
 ```
 
-More query examples can be found in [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder, you can also find the output of the examples in the scripts.
+More query examples can be found in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder, along with expected ouput from each of the queries.
 
 ### 5. Using HSpark programmatically
 
-HSpark can be used programmatically as well to create the tables, import data or query the tables. More examples can be found in the [test](https://github.com/bomeng/HSpark/tree/master/src/test) folder of HSpark source codes.
+HSpark can also be used to programmatically create tables, import data and run queries. Examples can be found in the [test](https://github.com/bomeng/HSpark/tree/master/src/test) folder of HSpark source code repo.
 
 ## Troubleshooting
 
