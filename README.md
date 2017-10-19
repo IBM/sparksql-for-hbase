@@ -2,7 +2,7 @@
 
 Apache HBase is an open source, NOSQL distributed database which runs on top of the Hadoop Distributed File System (HDFS), and is well-suited for faster read/write operations on large datasets with high throughput and low input/output latency. Unlike relational and traditional databases, HBase lacks support for SQL scripting, data types, etc., and requires the Java API to achieve the equivalent functionality. 
 
-This journey is intended to provide application developers familiar with SQL the methods to access HBase NOSQL data tables. You will quickly see how to create and query the data tables by using Apache Spark and the HSpark connector package, thus eliminating the need to learn the Java APIs required to tradionally access the HBase data tables. Additionally, HBase provides a signiicant performance advantage.
+This journey is intended to provide application developers familiar with SQL methods to access HBase NOSQL data tables. You will quickly see how to create and query the data tables by using Apache Spark and the HSpark connector package, thus eliminating the need to learn the Java APIs required to traditionally access the HBase data tables. In addition, HBase provides a significant performance advantage.
 
 When you have completed this journey, you will understand how to:
 
