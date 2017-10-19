@@ -2,13 +2,13 @@
 
 Apache HBase is an open source, NOSQL distributed database which runs on top of the Hadoop Distributed File System (HDFS), and is well-suited for faster read/write operations on large datasets with high throughput and low input/output latency. But, unlike relational and traditional databases, HBase lacks support for SQL scripting, data types, etc., and requires the Java API to achieve the equivalent functionality. 
 
-This journey is intended to provide application developers familiar with SQL the ability to access HBase data tables using the same SQL commands. You will quickly learn how to create and query the data tables by using Apache Spark SQL and the HSpark connector package. This allows you to take advantage of the significant performance gains from using HBase without having to learn the Java APIs required to traditionally access the HBase data tables.
+This journey is intended to provide application developers familiar with SQL, the ability to access HBase data tables using the same SQL commands. You will quickly learn how to create and query the data tables by using Apache Spark SQL and the HSpark connector package. This allows you to take advantage of the significant performance gains from using HBase without having to learn the Java APIs required to traditionally access the HBase data tables.
 
 When you have completed this journey, you will understand how to:
 
- - Install and configure [Apache Spark](https://spark.apache.org/) and [HSpark](https://github.com/bomeng/HSpark) connector
- - Learn to create metadata for tables in [Apache HBase](https://hbase.apache.org/)
- - Write Spark SQL queries to retrieve HBase data for analysis
+ - Install and configure [Apache Spark](https://spark.apache.org/) and [HSpark](https://github.com/bomeng/HSpark) connector.
+ - Learn to create metadata for tables in [Apache HBase](https://hbase.apache.org/).
+ - Write Spark SQL queries to retrieve HBase data for analysis.
 
 ![Architecture diagram](resources/flow.png)
 
@@ -44,9 +44,13 @@ HSpark relies on Apache Spark, thus you need to install Apache Spark first. Down
 
 You may also download the source codes from [Apache Spark GiHub](https://github.com/apache/spark) and build it using the 2.2 branch.
 
-To set-up and configure Aoache Spark, please refer to the [on-line users guide](https://spark.apache.org/docs/latest/).
+To set-up and configure Apache Spark, please refer to the [on-line users guide](https://spark.apache.org/docs/latest/).
 
-In order to make HSpark work properly, you may need to set the `SPARK_HOME` environment variable to point to your installation directory.
+In order to make HSpark work properly, you may need to set the `SPARK_HOME` environment variable to point to your installation directory:
+
+```sh
+$ export SPARK_HOME=<path_to_spark>
+```
 
 ### 2. Install Apache HBase
 
@@ -101,7 +105,7 @@ In order to demonstrate HSpark’s capability, we will use some of the TPC-DS sc
 
 ### 1. Schemas
 
-We will take some tables from TPC-DS definition. Here is the schema, the primary keys in each table are underlined:
+We will take some tables from the TPC-DS definition. Here is the schema (the primary keys in each table are underlined):
 
 [![N|Solid](resources/schema.png)](resources/schema.png)
 
@@ -133,7 +137,7 @@ Please find the data import commands in the [scripts](https://github.com/bomeng/
 
 ### 4. Query the tables using script in the HSpark shell
 
-After importing the data into the tables, we can now query the tables using regular SQL queries, for example,
+After importing the data into the tables, we can now query the tables using regular SQL queries; for example,
 
 ```sh
 SELECT count(1) FROM store_sales
