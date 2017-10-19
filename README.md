@@ -1,8 +1,8 @@
 # Using Spark SQL to access NOSQL HBase Tables
 
-Apache HBase is an open source, NOSQL distributed database which runs on top of the Hadoop Distributed File System (HDFS), and is well-suited for faster read/write operations on large datasets with high throughput and low input/output latency. Unlike relational and traditional databases, HBase lacks support for SQL scripting, data types, etc., and requires the Java API to achieve the equivalent functionality. 
+Apache HBase is an open source, NOSQL distributed database which runs on top of the Hadoop Distributed File System (HDFS), and is well-suited for faster read/write operations on large datasets with high throughput and low input/output latency. But, unlike relational and traditional databases, HBase lacks support for SQL scripting, data types, etc., and requires the Java API to achieve the equivalent functionality. 
 
-This journey is intended to provide application developers familiar with SQL methods to access HBase NOSQL data tables. You will quickly see how to create and query the data tables by using Apache Spark and the HSpark connector package, thus eliminating the need to learn the Java APIs required to traditionally access the HBase data tables. In addition, HBase provides a significant performance advantage.
+This journey is intended to provide application developers familiar with SQL the ability to access HBase data tables using the same SQL commands. You will quickly learn how to create and query the data tables by using Apache Spark SQL and the HSpark connector package. This allows you to take advantage of the significant performance gains from using HBase without having to learn the Java APIs required to traditionally access the HBase data tables.
 
 When you have completed this journey, you will understand how to:
 
@@ -22,7 +22,7 @@ When you have completed this journey, you will understand how to:
 ## Included Components:
  - [Apache Spark](https://spark.apache.org/): An open-source, fast and general-purpose cluster computing system.
  - [Apache HBase](https://hbase.apache.org/): A distribute key/value data store built to run on top of HDFS.
- - [HSpark 2.2.0](https://github.com/bomeng/HSpark): Provides access to HBase using SparkSQL. 
+ - [HSpark](https://github.com/bomeng/HSpark): Provides access to HBase using SparkSQL. 
 
 There are also some core tools you will need to complete this journey. If you do not already have them installed, please refer to the corresponding documents for installation instructions. Ensure that the proper system environemnt variables are correctly set (such as `PATH`, `JAVA_HOME` and `MVN_HOME`).
 
@@ -42,7 +42,7 @@ Perform the following steps:
 
 HSpark relies on Apache Spark, thus you need to install Apache Spark first. Download Apache Spark 2.2.0 from the [downloads page](https://spark.apache.org/downloads.html). 
 
-You may also download the source codes from [Apache Spark GiHub](https://github.com/apache/spark) and use 2.2 branch to build it.
+You may also download the source codes from [Apache Spark GiHub](https://github.com/apache/spark) and build it using the 2.2 branch.
 
 To set-up and configure Aoache Spark, please refer to the [on-line users guide](https://spark.apache.org/docs/latest/).
 
@@ -62,36 +62,37 @@ Also properly set up the environment variable `HBASE_HOME` and add it to `PATH`.
 
 ### 3. Download and build HSpark
 
-First you need to use git to clone the source codes from github and set up an environment property `HSPARK_HOME`:
+Use git to clone `version 2.2.0` of the source code from github and set up an environment property `HSPARK_HOME`:
 
 ```sh
-git clone https://github.com/bomeng/HSpark.git
-export HSPARK_HOME=<path_to_hspark>
+$ git clone https://github.com/bomeng/HSpark.git
+$ export HSPARK_HOME=<path_to_hspark>
 ```
 
-Configure the proper values of hspark.properties in the HSpark/conf folder. Depends on your HBase running mode, you can leave the value as it is, or modify them similar to the comments as an example.
+Configure the proper values in `hspark.properties` found in the `HSpark/conf` folder. Depending on your HBase running mode, you can leave the values as is, or modify them as specified in the comments found in the file.
 
-Then go to the root of the source tree and use Apache Maven to build the project:
+Go to the root of the source tree and use Apache Maven to build the project:
 
 ```sh
-cd HSpark
-mvn -DskipTests clean install
+$ cd HSpark
+$ mvn -DskipTests clean install
 ```
 
-In order to use HSpark SQL shell, you will need to add the built jar to the HBASE classpath:
+In order to use the HSpark SQL shell, you will need to add the built HSpark jar to the HBASE classpath:
 
 ```sh
-export HBASE_CLASSPATH=$HSPARK_HOME/target/hspark-2.2.0.jar
+$ export HBASE_CLASSPATH=$HSPARK_HOME/target/hspark-2.2.0.jar
 ```
 
 ### 4. Start the HSpark shell
 
-HSpark shell is a convenient tool for the developers or users to try HSpark quickly. It supports the basic SQL commands to create table, import data and query the table. After we have installed Spark, HBase and HSpark, now we start the HSpark shell:
+HSpark shell is a convenient tool for the developers or users to try HSpark quickly. It supports the basic SQL commands to create tables, import data and perform queries. After we have installed Spark, HBase and HSpark, now we can start the HSpark shell:
 
 ```sh
-cd <path_to_hspark>
-./bin/hbase-sql
+$ cd <path_to_hspark>
+$ ./bin/hbase-sql
 ```
+
 ## Using HSpark to access TPC-DS data
 
 [The TPC Benchmark™DS (TPC-DS)](http://www.tpc.org/tpcds/) is a decision support benchmark that models several generally applicable aspects of a decision support system, including queries and data maintenance. TPC-DS is the de-facto industry standard benchmark for measuring the performance of decision support solutions including, but not limited to, Big Data systems.
@@ -100,13 +101,13 @@ In order to demonstrate HSpark’s capability, we will use some of the TPC-DS sc
 
 ### 1. Schemas
 
-We will take some tables from TPC-DS definition. Here is the schema, the primary keys in each table are marked by underline:
+We will take some tables from TPC-DS definition. Here is the schema, the primary keys in each table are underlined:
 
 [![N|Solid](resources/schema.png)](resources/schema.png)
 
 ### 2. Create the tables using script in the HSpark shell
 
-Currently, HSpark supports several data types that are commonly used. For TPC-DS schema, the data types can be mapped as the following:
+Currently, HSpark supports several data types that are commonly used. For the TPC-DS schema, the data types can be mapped as the following:
 
 | TPC-DS data type | HSpark data type |
 | ------ | ------ |
@@ -122,7 +123,7 @@ Please find the table creation commands in the [scripts](https://github.com/bome
 
 HSpark supports bulk-load of data into the tables. The data can be defined in CSV files. By using the TPC-DS tool, you can generate the data at your preferred size.
 
-HSpark can import CSV data file that you generate by using TPC-DS tool. Import the data into different tables using the script:
+HSpark can import CSV data file that you generate by using the TPC-DS tool. Import the data into different tables using the script:
 
 ```sh
 LOAD DATA LOCAL INPATH ‘<path_to_csv_file>’ INTO TABLE <table_name>
