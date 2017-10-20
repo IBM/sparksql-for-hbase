@@ -29,7 +29,7 @@ There are also some core tools you will need to complete this journey. If you do
  - [Apache Maven 3.5.0](https://maven.apache.org/): A build automation tool primarily used for Java projects.
  - [Java JDK 1.8.0_144](http://www.oracle.com/technetwork/java/javase/downloads/index.html): A software development environment used for developing Java applications.
 
-## Steps
+# Steps
 
 Perform the following steps:
 
@@ -37,8 +37,9 @@ Perform the following steps:
 2. [Install Apace HBase](#2-install-apache-hbase)
 3. [Download and build HSpark](#3-download-and-build-hspark)
 4. [Start the HSpark shell](#4-start-the-hspark-shell)
+5. [Use HSpark to access TPC-DS data](#5-use-hspark-to-acces-tpc-ds-data)
 
-### 1. Install Apache Spark
+## 1. Install Apache Spark
 
 HSpark relies on Apache Spark, thus you need to install Apache Spark first. Download Apache Spark 2.2.0 from the [downloads page](https://spark.apache.org/downloads.html). 
 
@@ -52,7 +53,7 @@ In order to make HSpark work properly, you may need to set the `SPARK_HOME` envi
 $ export SPARK_HOME=<path_to_spark>
 ```
 
-### 2. Install Apache HBase
+## 2. Install Apache HBase
 
 Currently, HSpark works with Apache HBase 1.2.4. Go to the [downloads page](https://archive.apache.org/dist/hbase/1.2.4/) to install it. 
 
@@ -64,7 +65,7 @@ For reference, refer to this [guide](https://hbase.apache.org/book.html#quicksta
 
 Also properly set up the environment variable `HBASE_HOME` and add it to `PATH`.
 
-### 3. Download and build HSpark
+## 3. Download and build HSpark
 
 Use git to clone `version 2.2.0` of the source code from github and set up an environment property `HSPARK_HOME`:
 
@@ -88,7 +89,7 @@ In order to use the HSpark SQL shell, you will need to add the built HSpark jar 
 $ export HBASE_CLASSPATH=$HSPARK_HOME/target/hspark-2.2.0.jar
 ```
 
-### 4. Start the HSpark shell
+## 4. Start the HSpark shell
 
 HSpark shell is a convenient tool for the developers or users to try HSpark quickly. It supports the basic SQL commands to create tables, import data and perform queries. After we have installed Spark, HBase and HSpark, now we can start the HSpark shell:
 
@@ -97,7 +98,7 @@ $ cd <path_to_hspark>
 $ ./bin/hbase-sql
 ```
 
-## Using HSpark to access TPC-DS data
+## 5. Use HSpark to access TPC-DS data
 
 [The TPC Benchmark™DS (TPC-DS)](http://www.tpc.org/tpcds/) is a decision support benchmark that models several generally applicable aspects of a decision support system, including queries and data maintenance. TPC-DS is the de-facto industry standard benchmark for measuring the performance of decision support solutions including, but not limited to, Big Data systems.
 
@@ -149,7 +150,7 @@ More query examples can be found in the [scripts](https://github.com/bomeng/hspa
 
 HSpark can also be used to programmatically create tables, import data and run queries. Examples can be found in the [test](https://github.com/bomeng/HSpark/tree/master/src/test) folder of HSpark source code repo.
 
-## Troubleshooting
+# Troubleshooting
 
 * Error: `java.io.IOException: Mkdirs failed to create /user/<userid>/hbase-staging`
 
@@ -169,5 +170,5 @@ If you see this error while running any command, it means your command syntax is
 
 > Solution: Make sure your command is just one single line and has the correct syntax, especially for the single quote, space, etc. Although some example scripts look like multi-line commands, they are actually just single-line commands.
 
-## License
+# License
 [Apache 2.0](LICENSE)
