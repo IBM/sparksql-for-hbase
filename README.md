@@ -131,7 +131,7 @@ HSpark supports bulk-load of data into the tables. The data can be defined in CS
 HSpark can import CSV data file that you generate by using the TPC-DS tool. Import the data into different tables using the script:
 
 ```sh
-LOAD DATA LOCAL INPATH ‘<path_to_csv_file>’ INTO TABLE <table_name>
+LOAD DATA LOCAL INPATH '<path_to_csv_file>' INTO TABLE <table_name>
 ```
 
 Please find the data import commands in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder. Sample data files can be found in the [data](https://github.com/bomeng/hspark_journey/tree/master/data) folder.
