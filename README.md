@@ -79,7 +79,7 @@ Configure the proper values in `hspark.properties` found in the `HSpark/conf` fo
 Go to the root of the source tree and use Apache Maven to build the project:
 
 ```sh
-$ cd HSpark
+$ cd $HSPARK_HOME
 $ mvn -DskipTests clean install
 ```
 
@@ -94,7 +94,7 @@ $ export HBASE_CLASSPATH=$HSPARK_HOME/target/hspark-2.2.0.jar
 HSpark shell is a convenient tool for the developers or users to try HSpark quickly. It supports the basic SQL commands to create tables, import data and perform queries. After we have installed Spark, HBase and HSpark, now we can start the HSpark shell:
 
 ```sh
-$ cd <path_to_hspark>
+$ cd $HSPARK_HOME
 $ ./bin/hbase-sql
 ```
 
