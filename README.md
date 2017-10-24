@@ -24,7 +24,7 @@ When you have completed this journey, you will understand how to:
  - [Apache HBase](https://hbase.apache.org/): A distribute key/value data store built to run on top of HDFS.
  - [HSpark](https://github.com/bomeng/HSpark): Provides access to HBase using SparkSQL. 
 
-There are also some core tools you will need to complete this journey. If you do not already have them installed, please refer to the corresponding documents for installation instructions. Ensure that the proper system environemnt variables are correctly set (such as `PATH`, `JAVA_HOME` and `MVN_HOME`).
+There are also some core tools you will need to complete this journey. If you do not already have them installed, please refer to the corresponding documents for installation instructions. Ensure that the proper system environment variables are correctly set (such as `PATH`, `JAVA_HOME` and `MVN_HOME`).
 
  - [Apache Maven 3.5.0](https://maven.apache.org/): A build automation tool primarily used for Java projects.
  - [Java JDK 1.8.0_144](http://www.oracle.com/technetwork/java/javase/downloads/index.html): A software development environment used for developing Java applications.
@@ -150,7 +150,7 @@ After importing the data into the tables, we can now query the tables using regu
 SELECT count(1) FROM store_sales
 ```
 
-More query examples can be found in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder, along with expected ouput from each of the queries.
+More query examples can be found in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder, along with expected output from each of the queries.
 
 ### Using HSpark programmatically
 
@@ -160,7 +160,7 @@ HSpark can also be used to programmatically create tables, import data and run q
 
 * Error: `java.io.IOException: Mkdirs failed to create /user/<userid>/hbase-staging`
 
-If you see this error while running the LOAD command, it means you need to create a temparory folder locally to allow hbase to store intermediate result.
+If you see this error while running the LOAD command, it means you need to create a temporary folder locally to allow hbase to store intermediate result.
 
 > Solution: Create the *hbase-staging* directory that is required by hbase (using `mkdir` and `chmod` to create the directory manually).
 
