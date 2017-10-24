@@ -34,7 +34,7 @@ There are also some core tools you will need to complete this journey. If you do
 Perform the following steps:
 
 1. [Install Apache Spark](#1-install-apache-spark)
-2. [Install Apace HBase](#2-install-apache-hbase)
+2. [Install and run Apache HBase](#2-install-and-run-apache-hbase)
 3. [Download and build HSpark](#3-download-and-build-hspark)
 4. [Start the HSpark shell](#4-start-the-hspark-shell)
 5. [Use HSpark to access TPC-DS data](#5-use-hspark-to-acces-tpc-ds-data)
@@ -53,7 +53,7 @@ In order to make HSpark work properly, you may need to set the `SPARK_HOME` envi
 $ export SPARK_HOME=<path_to_spark>
 ```
 
-## 2. Install Apache HBase
+## 2. Install and run Apache HBase
 
 Currently, HSpark works with Apache HBase 1.2.4. Go to the [downloads page](https://archive.apache.org/dist/hbase/1.2.4/) to install it. 
 
@@ -64,6 +64,12 @@ For our simple demonstration of running HSpark in a single machine, we recommend
 For reference, refer to this [guide](https://hbase.apache.org/book.html#quickstart) to review how to install and run in each of the modes.
 
 Also properly set up the environment variable `HBASE_HOME` and add it to `PATH`.
+
+```sh
+$ cd $HBASE_HOME
+$ ./bin/start-hbase.sh
+```
+To test that HBase is up and running, access the HBase Web UI at [http://localhost:16010](http://localhost:16010)
 
 ## 3. Download and build HSpark
 
