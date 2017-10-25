@@ -128,13 +128,13 @@ Currently, HSpark supports several data types that are commonly used. For the TP
 | Char(N) or Varchar(N) | String |
 | Date | Long |
 
-Please find the table creation commands in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder. There you will find 5 commands that you need to cut and paste into the HSpark Shell.
+Please find the table creation commands in the [scripts](scripts) folder. There you will find 5 commands that you need to cut and paste into the HSpark Shell.
 
 ### Import data into the tables using script in the HSpark shell
 
 HSpark supports bulk-load of data into the tables. The data can be defined in CSV files. By using the TPC-DS tool, you can generate the data at your preferred size.
 
-HSpark can import CSV data files that you generate by using the TPC-DS tool. A sample CSV file(store_sales.txt) can be found in the [data](https://github.com/bomeng/hspark_journey/tree/master/data) folder. 
+HSpark can import CSV data files that you generate by using the TPC-DS tool. A sample CSV file(store_sales.txt) can be found in the [data](data) folder. 
 
 To import this sample CSV data file into the `store_sales` table, modify and enter the following command:
 
@@ -151,7 +151,7 @@ After importing the data into the tables, we can now query the tables using regu
 SELECT count(1) FROM store_sales
 ```
 
-More query examples can be found in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder, along with expected output from each of the queries.
+More query examples can be found in the [scripts](scripts) folder, along with expected output from each of the queries.
 
 ### Using HSpark programmatically
 
