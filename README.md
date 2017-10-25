@@ -134,13 +134,14 @@ Please find the table creation commands in the [scripts](https://github.com/bome
 
 HSpark supports bulk-load of data into the tables. The data can be defined in CSV files. By using the TPC-DS tool, you can generate the data at your preferred size.
 
-HSpark can import CSV data file that you generate by using the TPC-DS tool. Import the data into different tables using the script:
+HSpark can import CSV data files that you generate by using the TPC-DS tool. A sample `csv_file` can be found in the [data](https://github.com/bomeng/hspark_journey/tree/master/data) folder. 
+
+To import this sample CSV data file into the `store_sales` table, modify and enter the following command:
 
 ```sh
-LOAD DATA LOCAL INPATH '<path_to_csv_file>' INTO TABLE <table_name>
+LOAD DATA LOCAL INPATH '<absolute_path_to_repo_dir>/data/store_sales.txt' INTO TABLE store_sales
 ```
-
-Please find the data import commands in the [scripts](https://github.com/bomeng/hspark_journey/tree/master/scripts) folder. Sample data files can be found in the [data](https://github.com/bomeng/hspark_journey/tree/master/data) folder.
+*Note:* This command may fail with a `Mkdirs failed to create` error. See [Troubleshooting](#troubleshooting) section below.
 
 ### Query the tables using script in the HSpark shell
 
