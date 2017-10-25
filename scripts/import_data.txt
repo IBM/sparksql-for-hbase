@@ -1,1 +1,4 @@
+# Please modify '/data/store_sales.txt' to the actual location of the store_sales.txt file
+# Use absolute path to point to that file
+
 LOAD DATA LOCAL INPATH '/data/store_sales.txt' INTO TABLE store_sales
