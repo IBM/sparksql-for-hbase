@@ -134,7 +134,7 @@ Please find the table creation commands in the [scripts](scripts) folder. There 
 
 HSpark supports bulk-load of data into the tables. The data can be defined in CSV files. By using the TPC-DS tool, you can generate the data at your preferred size.
 
-HSpark can import CSV data files that you generate by using the TPC-DS tool. A sample `csv_file` can be found in the [data](data) folder. 
+HSpark can import CSV data files that you generate by using the TPC-DS tool. A sample CSV file(store_sales.txt) can be found in the [data](data) folder. 
 
 To import this sample CSV data file into the `store_sales` table, modify and enter the following command:
 
