@@ -29,6 +29,9 @@ There are also some core tools you will need to complete this journey. If you do
  - [Apache Maven 3.5.0](https://maven.apache.org/): A build automation tool primarily used for Java projects.
  - [Java JDK 1.8.0_144](http://www.oracle.com/technetwork/java/javase/downloads/index.html): A software development environment used for developing Java applications.
 
+# Watch the Video
+[![](http://img.youtube.com/vi/E1GPJMn0qF0/0.jpg)](https://www.youtube.com/watch?v=E1GPJMn0qF0)
+
 # Steps
 
 Perform the following steps:
