@@ -180,5 +180,18 @@ If you see this error while running any command, it means your command syntax is
 
 > Solution: Make sure your command is just one single line and has the correct syntax, especially for the single quote, space, etc. Although some example scripts look like multi-line commands, they are actually just single-line commands.
 
+# Links
+* [Demo on Youtube](https://www.youtube.com/watch?v=E1GPJMn0qF0): Watch the video.
+* [Performance](https://databricks.com/blog/2014/11/05/spark-officially-sets-a-new-record-in-large-scale-sorting.html): Get more information about Spark performance.
+* [HBase performance](https://blog.cloudera.com/blog/2016/06/new-study-evaluating-apache-hbase-performance-on-modern-storage-media/): Learn more about HBase performance.
+* [SparkPackages: HSpark](https://spark-packages.org/package/bomeng/HSpark): Learn more about the high-performance HBase Spark SQL engine.
+* [BigSQL blog](https://developer.ibm.com/hadoop/2017/07/13/announcing-bigsql-5-0/): Read “Announcing Big SQL 5.0” for more information.
+
+# Learn more
+* **Data Analytics Code Patterns**: Enjoyed this Code Pattern? Check out our other [Data Analytics Code Patterns](https://developer.ibm.com/code/technologies/data-science/)
+* **AI and Data Code Pattern Playlist**: Bookmark our [playlist](https://www.youtube.com/playlist?list=PLzUbsvIyrNfknNewObx5N7uGZ5FKH0Fde) with all of our Code Pattern videos
+* **Data Science Experience**: Master the art of data science with IBM's [Data Science Experience](https://datascience.ibm.com/)
+* **Spark on IBM Cloud**: Need a Spark cluster? Create up to 30 Spark executors on IBM Cloud with our [Spark service](https://console.bluemix.net/catalog/services/apache-spark)
+
 # License
 [Apache 2.0](LICENSE)
