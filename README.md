@@ -1,6 +1,6 @@
 # Using Spark SQL to access NOSQL HBase Tables
 
-Apache HBase is an open source, NOSQL distributed database which runs on top of the Hadoop Distributed File System (HDFS), and is well-suited for faster read/write operations on large datasets with high throughput and low input/output latency. But, unlike relational and traditional databases, HBase lacks support for SQL scripting, data types, etc., and requires the Java API to achieve the equivalent functionality. 
+Apache HBase is an open source, NOSQL distributed database which runs on top of the Hadoop Distributed File System (HDFS), and is well-suited for faster read/write operations on large datasets with high throughput and low input/output latency. But, unlike relational and traditional databases, HBase lacks support for SQL scripting, data types, etc., and requires the Java API to achieve the equivalent functionality.
 
 This journey is intended to provide application developers familiar with SQL, the ability to access HBase data tables using the same SQL commands. You will quickly learn how to create and query the data tables by using Apache Spark SQL and the HSpark connector package. This allows you to take advantage of the significant performance gains from using HBase without having to learn the Java APIs required to traditionally access the HBase data tables.
 
@@ -22,7 +22,7 @@ When you have completed this journey, you will understand how to:
 ## Included Components:
  - [Apache Spark](https://spark.apache.org/): An open-source, fast and general-purpose cluster computing system.
  - [Apache HBase](https://hbase.apache.org/): A distribute key/value data store built to run on top of HDFS.
- - [HSpark](https://github.com/bomeng/HSpark): Provides access to HBase using SparkSQL. 
+ - [HSpark](https://github.com/bomeng/HSpark): Provides access to HBase using SparkSQL.
 
 There are also some core tools you will need to complete this journey. If you do not already have them installed, please refer to the corresponding documents for installation instructions. Ensure that the proper system environment variables are correctly set (such as `PATH`, `JAVA_HOME` and `MVN_HOME`).
 
@@ -44,7 +44,7 @@ Perform the following steps:
 
 ## 1. Install Apache Spark
 
-HSpark relies on Apache Spark, thus you need to install Apache Spark first. Download Apache Spark 2.2.0 from the [downloads page](https://spark.apache.org/downloads.html). 
+HSpark relies on Apache Spark, thus you need to install Apache Spark first. Download Apache Spark 2.2.0 from the [downloads page](https://spark.apache.org/downloads.html).
 
 You may also download the source codes from [Apache Spark GiHub](https://github.com/apache/spark) and build it using the 2.2 branch.
 
@@ -58,9 +58,9 @@ $ export SPARK_HOME=<path_to_spark>
 
 ## 2. Install and run Apache HBase
 
-Currently, HSpark works with Apache HBase 1.2.4. Go to the [downloads page](https://archive.apache.org/dist/hbase/1.2.4/) to install it. 
+Currently, HSpark works with Apache HBase 1.2.4. Go to the [downloads page](https://archive.apache.org/dist/hbase/1.2.4/) to install it.
 
-HBase can be installed to run in 3 different modes – standalone, pseudo-distributed, and fully distributed. 
+HBase can be installed to run in 3 different modes – standalone, pseudo-distributed, and fully distributed.
 
 For our simple demonstration of running HSpark in a single machine, we recommend you run it in pseudo-distributed mode. This mode runs HBase completely on a single host, but all daemons run as a separate process.
 
@@ -137,7 +137,7 @@ Please find the table creation commands in the [scripts](scripts) folder. There 
 
 HSpark supports bulk-load of data into the tables. The data can be defined in CSV files. By using the TPC-DS tool, you can generate the data at your preferred size.
 
-HSpark can import CSV data files that you generate by using the TPC-DS tool. A sample CSV file(store_sales.txt) can be found in the [data](data) folder. 
+HSpark can import CSV data files that you generate by using the TPC-DS tool. A sample CSV file(store_sales.txt) can be found in the [data](data) folder.
 
 To import this sample CSV data file into the `store_sales` table, modify and enter the following command:
 
