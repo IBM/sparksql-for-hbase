@@ -1,4 +1,4 @@
-Query 1: 
+Query 1:
 SELECT count(1) FROM store_sales
 
 Expected result:
@@ -8,20 +8,20 @@ Expected result:
 |     100|
 +--------+
 
-Query 2: 
+Query 2:
 SELECT ss_quantity, ss_wholesale_cost, ss_list_price FROM store_sales WHERE ss_item_sk = 2744 AND ss_ticket_number = 1
 
-Expected result: 
+Expected result:
 +-----------+-----------------+-------------+
 |ss_quantity|ss_wholesale_cost|ss_list_price|
 +-----------+-----------------+-------------+
 |         37|            63.63|       101.17|
 +-----------+-----------------+-------------+
 
-Query 3: 
+Query 3:
 SELECT ss_sold_date_sk, ss_sold_time_sk, ss_store_sk FROM store_sales WHERE ss_item_sk = 2744 AND ss_ticket_number = 1
 
-Expected result: 
+Expected result:
 +---------------+---------------+-----------+
 |ss_sold_date_sk|ss_sold_time_sk|ss_store_sk|
 +---------------+---------------+-----------+
