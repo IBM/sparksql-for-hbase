@@ -6,7 +6,7 @@ This journey is intended to provide application developers familiar with SQL, th
 
 When you have completed this journey, you will understand how to:
 
- - Install and configure [Apache Spark](https://spark.apache.org/) and [HSpark](https://github.com/bomeng/HSpark) connector.
+ - Install and configure [Apache Spark](https://spark.apache.org/) and [HSpark](https://github.com/bomeng/Heracles) connector.
  - Learn to create metadata for tables in [Apache HBase](https://hbase.apache.org/).
  - Write Spark SQL queries to retrieve HBase data for analysis.
 
@@ -22,15 +22,15 @@ When you have completed this journey, you will understand how to:
 ## Included Components:
  - [Apache Spark](https://spark.apache.org/): An open-source, fast and general-purpose cluster computing system.
  - [Apache HBase](https://hbase.apache.org/): A distribute key/value data store built to run on top of HDFS.
- - [HSpark](https://github.com/bomeng/HSpark): Provides access to HBase using SparkSQL.
+ - [HSpark](https://github.com/bomeng/Heracles): Provides access to HBase using SparkSQL.
 
 There are also some core tools you will need to complete this journey. If you do not already have them installed, please refer to the corresponding documents for installation instructions. Ensure that the proper system environment variables are correctly set (such as `PATH`, `JAVA_HOME` and `MVN_HOME`).
 
  - [Apache Maven 3.5.0](https://maven.apache.org/): A build automation tool primarily used for Java projects.
- - [Java JDK 1.8.0_144](http://www.oracle.com/technetwork/java/javase/downloads/index.html): A software development environment used for developing Java applications.
+ - [Java JDK 1.8.0_144](https://www.oracle.com/technetwork/java/javase/downloads/index.html): A software development environment used for developing Java applications.
 
 # Watch the Video
-[![](http://img.youtube.com/vi/E1GPJMn0qF0/0.jpg)](https://www.youtube.com/watch?v=E1GPJMn0qF0)
+[![](https://img.youtube.com/vi/E1GPJMn0qF0/0.jpg)](https://www.youtube.com/watch?v=E1GPJMn0qF0)
 
 # Steps
 
@@ -40,7 +40,7 @@ Perform the following steps:
 2. [Install and run Apache HBase](#2-install-and-run-apache-hbase)
 3. [Download and build HSpark](#3-download-and-build-hspark)
 4. [Start the HSpark shell](#4-start-the-hspark-shell)
-5. [Use HSpark to access TPC-DS data](#5-use-hspark-to-acces-tpc-ds-data)
+5. [Use HSpark to access TPC-DS data](#5-use-hspark-to-access-tpc-ds-data)
 
 ## 1. Install Apache Spark
 
@@ -79,7 +79,7 @@ To test that HBase is up and running, access the HBase Web UI at [http://localho
 Use git to clone `version 2.2.0` of the source code from github and set up an environment property `HSPARK_HOME`:
 
 ```sh
-$ git clone https://github.com/bomeng/HSpark.git
+$ git clone https://github.com/bomeng/Heracles.git
 $ export HSPARK_HOME=<path_to_hspark>
 ```
 
@@ -158,7 +158,7 @@ More query examples can be found in the [scripts](scripts) folder, along with ex
 
 ### Using HSpark programmatically
 
-HSpark can also be used to programmatically create tables, import data and run queries. Visit the HSpack source code repository at [https://github.com/bomeng/HSpark](https://github.com/bomeng/HSpark/tree/master/src/test) for more details.
+HSpark can also be used to programmatically create tables, import data and run queries. Visit the HSpack source code repository at [https://github.com/bomeng/Heracles](https://github.com/bomeng/Heracles/tree/master/src/test) for more details.
 
 # Troubleshooting
 
@@ -188,12 +188,12 @@ If you see this error while running any command, it means your command syntax is
 * [BigSQL blog](https://developer.ibm.com/hadoop/2017/07/13/announcing-bigsql-5-0/): Read “Announcing Big SQL 5.0” for more information.
 
 # Learn more
-* **Data Analytics Code Patterns**: Enjoyed this Code Pattern? Check out our other [Data Analytics Code Patterns](https://developer.ibm.com/code/technologies/data-science/)
+* **Data Analytics Code Patterns**: Enjoyed this Code Pattern? Check out our other [Data Analytics Code Patterns](https://developer.ibm.com/technologies/data-science/)
 * **AI and Data Code Pattern Playlist**: Bookmark our [playlist](https://www.youtube.com/playlist?list=PLzUbsvIyrNfknNewObx5N7uGZ5FKH0Fde) with all of our Code Pattern videos
-* **Data Science Experience**: Master the art of data science with IBM's [Data Science Experience](https://datascience.ibm.com/)
-* **Spark on IBM Cloud**: Need a Spark cluster? Create up to 30 Spark executors on IBM Cloud with our [Spark service](https://console.bluemix.net/catalog/services/apache-spark)
+* **Data Science Experience**: Master the art of data science with IBM's [Data Science Experience](https://www.ibm.com/cloud/watson-studio)
+* **Spark on IBM Cloud**: Need a Spark cluster? Create up to 30 Spark executors on IBM Cloud with our [Spark service](https://cloud.ibm.com/catalog/services/apache-spark)
 
 # License
-This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](http://www.apache.org/licenses/LICENSE-2.0.txt).
+This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
-[Apache Software License (ASL) FAQ](http://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
+[Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
