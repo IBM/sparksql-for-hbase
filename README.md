@@ -184,6 +184,7 @@ If you see this error while running any command, it means your command syntax is
 * [Demo on Youtube](https://www.youtube.com/watch?v=E1GPJMn0qF0): Watch the video.
 * [Performance](https://databricks.com/blog/2014/11/05/spark-officially-sets-a-new-record-in-large-scale-sorting.html): Get more information about Spark performance.
 * [HBase performance](https://blog.cloudera.com/blog/2016/06/new-study-evaluating-apache-hbase-performance-on-modern-storage-media/): Learn more about HBase performance.
+* [Learn SQL in Detail](https://www.scaler.com/topics/sql/): Learn SQL and it's application in detail.
 * [SparkPackages: HSpark](https://spark-packages.org/package/bomeng/HSpark): Learn more about the high-performance HBase Spark SQL engine.
 * [BigSQL blog](https://developer.ibm.com/hadoop/2017/07/13/announcing-bigsql-5-0/): Read “Announcing Big SQL 5.0” for more information.
 
